@@ -77,11 +77,31 @@ The dataset consists of hotel reviews collected from various platforms. Each rev
 - **Cluster 1 (Yellow):** Reflects mixed reviews, indicating customers with moderate satisfaction.
 - **Cluster 2 (Green):** Indicates negative reviews with low sentiment scores and lower ratings.
 
-### Insights
-- The clustering helps identify areas for improvement by analyzing negative clusters.
-- Positive clusters highlight strengths that can be emphasized in marketing campaigns.
-- Mixed reviews can guide targeted interventions to enhance customer experiences.
-- Clustering reviews provide actionable insights that can directly impact service quality and customer satisfaction.
+### Segmentation by Customer Type:
+#### Contract:
+- **Average ADR:** 92.75
+- **Total ADR Revenue:** 291,151.78
+- **Repeat Customer Rate:** Very low (1.05%)
+- **Average Special Requests:** 0.84
+- **Previous Cancellations:** Relatively low (204)
+- **Waiting List Time:** Almost zero (0.02)
+
+#### Group:
+- **Average ADR:** 84.36 (lowest among all segments)
+- **Total ADR Revenue:** 45,892.90
+- **Repeat Customer Rate:** Highest (28.68%)
+- **Special Requests:** Low (0.65)
+- **Waiting List Time:** Highest (0.34)
+
+### Key Insights
+The clustering results reveal valuable patterns:
+1. **Customer Feedback Patterns:** Clustering hotel reviews based on sentiment scores identifies groups of customers with distinct feedback. Positive reviews dominate one cluster, indicating satisfaction, while mixed and negative reviews highlight areas for improvement.
+2. **Revenue Analysis:** The **Contract** segment contributes significantly to revenue despite a low repeat customer rate. Its focus on long-term agreements makes it a key driver of steady income. Conversely, the **Group** segment shows higher repeat rates but generates less revenue per booking, suggesting potential for optimizing offers tailored to group dynamics.
+3. **Customer Retention:** Repeat customers, although associated with lower ADR, provide consistent revenue. Enhancing marketing strategies for these customers could maximize loyalty and lifetime value.
+
+### Further Analysis
+- Investigating seasonal or event-based factors influencing segment behavior can uncover patterns to further refine marketing strategies.
+- Focusing on high-revenue individual bookings while retaining group and contract balances can enhance overall profitability.
 
 ## Evaluation Metrics
 - **Inertia (Sum of Squared Distances):** Measures how tight the clusters are. Lower inertia indicates better-defined clusters.
@@ -97,7 +117,7 @@ The dataset consists of hotel reviews collected from various platforms. Each rev
   - Experimenting with different clustering algorithms (e.g., DBSCAN, Hierarchical Clustering).
   - Incorporating additional features like review length, keywords, and timestamps.
   - Enhancing visualization with interactive dashboards.
-  
+
 ## How to Run
 1. Clone this repository.
 2. Install required packages:
