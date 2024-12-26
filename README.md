@@ -84,6 +84,11 @@ The dataset consists of hotel reviews collected from various platforms. Each rev
    - Visualizes the clustered data with color-coded clusters.
 
 ## Results
+## Clustering Visualization
+Here is the clustering visualization:
+
+![Clustering Plot](./imag/clustering.png)
+
 - The plot displays three distinct clusters of hotel reviews.
 - Each cluster represents reviews with similar patterns and characteristics.
 
