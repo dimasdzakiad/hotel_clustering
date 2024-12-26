@@ -31,19 +31,31 @@ The dataset consists of hotel reviews collected from various platforms. Each rev
 ## Code Explanation
 1. **Data Loading:**
    ```python
-   df = pd.read_csv('hotel_reviews.csv')
+   import pandas as pd
+   df = pd.read_csv('hotels.csv')
+   df['reservation_status_date'] = pd.to_datetime(df['reservation_status_date'], errors='coerce')
+
+   # Handling missing values
+   df.fillna(df.median(), inplace=True)
+   df.fillna(df.mode().iloc[0], inplace=True)
+   df.drop_duplicates(inplace=True)
    ```
    - Loads the hotel review data into a dataframe.
 
 2. **Feature Scaling:**
    ```python
+   from sklearn.preprocessing import StandardScaler
+
+   features = ['adr', 'total_of_special_requests', 'booking_changes', 'previous_cancellations', 'days_in_waiting_list']
    scaler = StandardScaler()
-   df_scaled = scaler.fit_transform(df[['review_score', 'sentiment_score']])
+   df_scaled = scaler.fit_transform(df[features])
    ```
    - Standardizes the review score and sentiment score for uniformity.
 
 3. **PCA:**
    ```python
+   from sklearn.decomposition import PCA
+   
    pca = PCA(n_components=2)
    principal_components = pca.fit_transform(df_scaled)
    ```
@@ -51,13 +63,17 @@ The dataset consists of hotel reviews collected from various platforms. Each rev
 
 4. **Clustering:**
    ```python
+   from sklearn.cluster import KMeans
+
    kmeans = KMeans(n_clusters=3, random_state=42)
-   df['cluster'] = kmeans.fit_predict(principal_components)
+   df['cluster'] = kmeans.fit_predict(df_scaled)
    ```
    - Applies KMeans clustering with 3 clusters.
 
 5. **Visualization:**
    ```python
+   import matplotlib.pyplot as plt
+   
    plt.scatter(principal_components[:, 0], principal_components[:, 1], c=df['cluster'], cmap='viridis')
    plt.title('Hotel Reviews Clustering')
    plt.xlabel('Principal Component 1')
