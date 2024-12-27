@@ -4,7 +4,6 @@ This project aims to cluster hotel reviews based on sentiment and key features u
 
 ## Table of Contents
 - [Overview](#overview)
-- [Requirements](#requirements)
 - [Dataset](#dataset)
 - [Code Explanation](#code-explanation)
 - [Results](#results)
@@ -16,14 +15,6 @@ This project aims to cluster hotel reviews based on sentiment and key features u
 
 ## Overview
 This project performs clustering on a dataset of hotel reviews. By applying PCA for dimensionality reduction and KMeans for clustering, we segment the reviews into meaningful clusters. These clusters reflect different types of customer feedback, providing valuable insights for hotel management.
-
-## Requirements
-- Python 3.x
-- pandas
-- matplotlib
-- seaborn
-- sklearn
-- numpy
 
 ## Dataset
 The dataset consists of hotel reviews collected from various platforms. Each review is associated with different features such as hotel, is_canceled, lead_time, arrival_date_year, arrival_date_month, arrival_date_week_number, arrival_date_day_of_month, stays_in_weekend_nights, stays_in_week_nights, adults, children, babies, meal, country, market_segment, distribution_channel, is_repeated_guest, previous_cancellations, previous_bookings_not_canceled, reserved_room_type, assigned_room_type, booking_changes, deposit_type, agent, company, days_in_waiting_list, customer_type, adr, required_car_parking_spaces, total_of_special_requests, reservation_status, reservation_status_date.
